@@ -5,86 +5,347 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hizmet Şartları - Uranus Music Bot</title>
     <style>
+        :root {
+            --discord-blurple: #5865F2;
+            --discord-green: #57F287;
+            --discord-yellow: #FEE75C;
+            --discord-red: #ED4245;
+            --discord-dark: #2C2F33;
+            --discord-darker: #23272A;
+        }
+        
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
+            font-family: 'Whitney', 'Arial', sans-serif;
+            line-height: 1.7;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
+            color: #dcddde;
+            background: var(--discord-darker);
         }
+        
+        .container {
+            background: var(--discord-dark);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
         h1 {
-            color: #5865F2;
-            border-bottom: 2px solid #5865F2;
-            padding-bottom: 10px;
+            color: var(--discord-blurple);
+            border-bottom: 3px solid var(--discord-blurple);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-weight: 700;
         }
+        
         h2 {
-            color: #5865F2;
-            margin-top: 25px;
-        }
-        .last-updated {
-            background: #f0f0f0;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        .contact-info {
-            background: #e8f4fd;
-            padding: 15px;
-            border-radius: 5px;
+            color: var(--discord-green);
             margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        h3 {
+            color: var(--discord-yellow);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .last-updated {
+            background: rgba(88, 101, 242, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--discord-blurple);
+        }
+        
+        .warning-box {
+            background: rgba(237, 66, 69, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--discord-red);
+        }
+        
+        .info-box {
+            background: rgba(254, 231, 92, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--discord-yellow);
+        }
+        
+        .contact-info {
+            background: rgba(87, 242, 135, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid var(--discord-green);
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        a {
+            color: var(--discord-blurple);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .section-number {
+            background: var(--discord-blurple);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .compliance-badges {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(88, 101, 242, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            border: 1px solid var(--discord-blurple);
+        }
+        
+        .command-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .command-table th {
+            background: var(--discord-blurple);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .command-table td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
 <body>
-    <h1>Uranus Music Bot Hizmet Şartları</h1>
-    
-    <div class="last-updated">
-        <strong>Son Güncelleme:</strong> 2024
-    </div>
-    
-    <h2>1. Bot Kullanımı</h2>
-    <p>Uranus Music botunu kullanarak, Discord'un Hizmet Şartları'na uymayı kabul etmiş olursunuz. Bot sadece Discord platformu içinde kullanılabilir.</p>
-    
-    <h2>2. Hizmet Açıklaması</h2>
-    <p>Uranus Music, Discord sunucularında müzik çalma özellikleri sunan bir bottur. Bot aşağıdaki hizmetleri sağlar:</p>
-    <ul>
-        <li>YouTube, Spotify, SoundCloud gibi platformlardan müzik çalma</li>
-        <li>Müzik kuyruğu yönetimi</li>
-        <li>Ses kanalı yönetimi</li>
-        <li>Playlist desteği</li>
-    </ul>
-    
-    <h2>3. Veri Toplama</h2>
-    <p>Botun çalışması için minimum düzeyde veri topluyoruz:</p>
-    <ul>
-        <li>Sunucu ID'leri (botun hangi sunucularda olduğunu bilmek için)</li>
-        <li>Kullanıcı ID'leri (komut kullanıcılarını tanımak için)</li>
-        <li>Ses kanalı bilgileri (müzik çalmak için)</li>
-        <li>Tercih edilen ayarlar (dil, ön ek gibi)</li>
-    </ul>
-    
-    <h2>4. Yasaklı Kullanımlar</h2>
-    <p>Aşağıdaki durumlarda botu kullanamazsınız:</p>
-    <ul>
-        <li>Yasa dışı içerik paylaşmak veya yayınlamak</li>
-        <li>Botu spam veya kötü amaçlı kullanmak</li>
-        <li>Botun çalışmasını engellemeye çalışmak</li>
-        <li>Telif hakkıyla korunan içeriği izinsiz kullanmak</li>
-        <li>Diğer kullanıcıların deneyimini olumsuz etkilemek</li>
-    </ul>
-    
-    <h2>5. Hizmet Kesintileri</h2>
-    <p>Uranus Music botu "olduğu gibi" sunulmaktadır. Bakım, güncelleme veya teknik sorunlar nedeniyle hizmet kesintileri yaşanabilir. Bu durumlardan sorumlu tutulamayız.</p>
-    
-    <h2>6. Değişiklik Hakkı</h2>
-    <p>Bu hizmet şartlarını herhangi bir zamanda değiştirme hakkını saklı tutarız. Önemli değişikliklerde Discord üzerinden bildirim yapılacaktır.</p>
-    
-    <div class="contact-info">
-        <h2>İletişim</h2>
-        <p>Bot ile ilgili sorularınız veya veri silme talepleriniz için:</p>
-        <p>Discord: HaaXD</p>
-        <p>GitHub: <a href="https://github.com/HaaXD/uranus-music">Uranus Music Repository</a></p>
+    <div class="container">
+        <h1>📋 Uranus Music Bot Hizmet Şartları</h1>
+        
+        <div class="last-updated">
+            <strong>📅 Son Güncelleme:</strong> 15 Aralık 2024<br>
+            <strong>⚖️ Uyumluluk:</strong> Discord Developer Policy, Discord Terms of Service
+        </div>
+
+        <div class="compliance-badges">
+            <span class="badge">✅ Discord ToS Uyumlu</span>
+            <span class="badge">🎵 Müzik Botu</span>
+            <span class="badge">🔒 Güvenli</span>
+            <span class="badge">📜 Legal</span>
+        </div>
+
+        <div class="info-box">
+            <strong>ℹ️ Önemli Not:</strong> Bu botu kullanarak aşağıdaki şartları kabul etmiş sayılırsınız. 
+            Lütfen tüm şartları dikkatlice okuyun.
+        </div>
+
+        <h2><span class="section-number">1</span> Kabul ve Değişiklikler</h2>
+
+        <h3>1.1. Şartların Kabulü</h3>
+        <p>Uranus Music botunu ("Bot") kullanarak:</p>
+        <ul>
+            <li>Bu Hizmet Şartları'nı kabul etmiş sayılırsınız</li>
+            <li>Discord'un <a href="https://discord.com/terms">Hizmet Şartları</a>'na uymayı taahhüt edersiniz</li>
+            <li>Discord'un <a href="https://discord.com/guidelines">Topluluk Kuralları</a>'na uyacağınızı beyan edersiniz</li>
+        </ul>
+
+        <h3>1.2. Değişiklik Hakkı</h3>
+        <p>Bu şartları her zaman değiştirme hakkını saklı tutarız. Önemli değişiklikler:</p>
+        <ul>
+            <li>30 gün önceden duyurulacaktır</li>
+            <li>Bot üzerinden bildirilecektir</li>
+            <li>Bu sayfada güncellenecektir</li>
+        </ul>
+
+        <h2><span class="section-number">2</span> Hizmet Tanımı</h2>
+
+        <h3>2.1. Bot Özellikleri</h3>
+        <p>Uranus Music botu aşağıdaki hizmetleri sağlar:</p>
+        <ul>
+            <li>🎶 YouTube, Spotify, SoundCloud'dan müzik çalma</li>
+            <li>📻 Yüksek kaliteli ses aktarımı (128kbps/256kbps)</li>
+            <li>🔢 Gelişmiş müzik kuyruğu yönetimi</li>
+            <li>🎛️ Ses efekti ve filtreleri</li>
+            <li>📜 Şarkı sözleri görüntüleme</li>
+            <li>⚙️ Kullanıcı tercih ayarları</li>
+        </ul>
+
+        <h3>2.2. Hizmet Sınırlamaları</h3>
+        <ul>
+            <li>Bot 7/24 hizmet vermeyi amaçlar ancak kesintiler olabilir</li>
+            <li>Bazı bölgelerde erişim kısıtlamaları olabilir</li>
+            <li>Yoğun kullanım durumunda kısıtlamalar uygulanabilir</li>
+        </ul>
+
+        <h2><span class="section-number">3</span> Kullanıcı Yükümlülükleri</h2>
+
+        <h3>3.1. Genel Kurallar</h3>
+        <p>Botu kullanırken aşağıdakileri yapmamayı kabul edersiniz:</p>
+        <ul>
+            <li>❌ Botu spam veya kötüye kullanmak</li>
+            <li>❌ Otomatik komut script'leri kullanmak</li>
+            <li>❌ Botun çalışmasını engellemeye çalışmak</li>
+            <li>❌ Diğer kullanıcıların deneyimini bozmak</li>
+            <li>❌ Yasa dışı içerik paylaşmak</li>
+        </ul>
+
+        <h3>3.2. Yasaklı İçerikler</h3>
+        <div class="warning-box">
+            <strong>⚠️ Yasaklı İçerikler:</strong> Aşağıdaki içerikler kesinlikle yasaktır:
+        </div>
+        <ul>
+            <li>Telif hakkı ihlali yapan içerikler</li>
+            <li>Yetişkinlere uygun (NSFW) içerikler</li>
+            <li>Nefret söylemi veya ayrımcı içerikler</li>
+            <li>Şiddet veya zararlı içerikler</li>
+            <li>Yasa dışı faaliyetleri teşvik eden içerikler</li>
+        </ul>
+
+        <h2><span class="section-number">4</span> Komut Kullanım Kuralları</h2>
+
+        <table class="command-table">
+            <thead>
+                <tr>
+                    <th>Komut Türü</th>
+                    <th>Kullanım Kuralları</th>
+                    <th>Kısıtlamalar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Müzik Komutları</strong></td>
+                    <td>Müzik çalma, duraklatma, geçme</td>
+                    <td>Ses kanalı gereklidir</td>
+                </tr>
+                <tr>
+                    <td><strong>Ayar Komutları</strong></td>
+                    <td>Ses seviyesi, döngü, filtreler</td>
+                    <td>Sunucu yönetici izni gerekebilir</td>
+                </tr>
+                <tr>
+                    <td><strong>Bilgi Komutları</strong></td>
+                    <td>Kuyruk, çalan şarkı, yardım</td>
+                    <td>Herkes kullanabilir</td>
+                </tr>
+                <tr>
+                    <td><strong>Yönetim Komutları</strong></td>
+                    <td>DJ rolü, kanal kısıtlamaları</td>
+                    <td>Sadece yöneticiler</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2><span class="section-number">5</span> Fikri Mülkiyet</h2>
+
+        <h3>5.1. Bot Kodları</h3>
+        <p>Uranus Music botunun kaynak kodu:</p>
+        <ul>
+            <li>GitHub'da <a href="https://github.com/HaaXD/uranus-music">açık kaynak</a> olarak yayınlanmıştır</li>
+            <li>MIT lisansı altında lisanslanmıştır</li>
+            <li>Katkıda bulunmak için repository'yi fork edebilirsiniz</li>
+        </ul>
+
+        <h3>5.2. Üçüncü Taraf İçerikler</h3>
+        <p>Bot aracılığıyla çalınan müzikler:</p>
+        <ul>
+            <li>İlgili platformların (YouTube, Spotify vb.) şartlarına tabidir</li>
+            <li>Telif hakları içerik sahiplerine aittir</li>
+            <li>Kişisel kullanım için sunulmaktadır</li>
+        </ul>
+
+        <h2><span class="section-number">6</span> Sorumluluk Reddi</h2>
+
+        <div class="warning-box">
+            <strong>🚫 Sorumluluk Reddi:</strong> Uranus Music botu "OLDUĞU GİBİ" sunulmaktadır. 
+            Aşağıdaki durumlardan sorumluluk kabul etmiyoruz:
+        </div>
+
+        <ul>
+            <li>Botun geçici veya kalıcı olarak çalışmaması</li>
+            <li>Veri kaybı veya bozulmaları</li>
+            <li>Üçüncü taraf API'lerindeki değişiklikler</li>
+            <li>Kullanıcı hatalarından kaynaklanan sorunlar</li>
+            <li>Discord platformundaki değişiklikler</li>
+        </ul>
+
+        <h2><span class="section-number">7</span> İhlaller ve Yaptırımlar</h2>
+
+        <h3>7.1. İhlal Bildirimi</h3>
+        <p>Şart ihlali durumunda:</p>
+        <ol>
+            <li>Uyarı verilir</li>
+            <li>Geçici kısıtlama uygulanır</li>
+            <li>Kalıcı engelleme uygulanır</li>
+        </ol>
+
+        <h3>7.2. Otomatik Moderasyon</h3>
+        <p>Bot aşağıdaki durumlarda otomatik moderasyon uygular:</p>
+        <ul>
+            <li>Aşırı komut kullanımı (rate limiting)</li>
+            <li>Spam tespiti</li>
+            <li>Kötüye kullanım tespiti</li>
+        </ul>
+
+        <h2><span class="section-number">8</span> Hüküm ve Koşullar</h2>
+
+        <h3>8.1. Geçerlilik</h3>
+        <p>Bu şartların herhangi bir maddesi geçersiz sayılırsa, diğer maddeler geçerliliğini korur.</p>
+
+        <h3>8.2. Uygulanacak Hukuk</h3>
+        <p>Bu şartlar Türkiye Cumhuriyeti hukukuna tabidir.</p>
+
+        <div class="contact-info">
+            <h2>📞 İletişim</h2>
+            <p>Hizmet şartları hakkında sorularınız için:</p>
+            
+            <ul>
+                <li><strong>Discord:</strong> <code>HaaXD</code> (Özel mesaj)</li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/HaaXD/uranus-music">Uranus Music Repository</a></li>
+                <li><strong>Issue Tracker:</strong> <a href="https://github.com/HaaXD/uranus-music/issues">GitHub Issues</a></li>
+            </ul>
+
+            <p><strong>⏰ Yanıt Süresi:</strong> Talepler 3 iş günü içinde yanıtlanır.</p>
+        </div>
+
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: #72767d; font-size: 14px;">
+            <p>© 2024 Uranus Music Bot. Tüm hakları saklıdır.<br>
+            Bu belge Discord Developer Policy ve Discord Terms of Service'e uygun hazırlanmıştır.</p>
+        </div>
     </div>
 </body>
-      </html>
+    </html>
